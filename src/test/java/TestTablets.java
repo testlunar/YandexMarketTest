@@ -23,14 +23,29 @@ public class TestTablets extends BaseSteps {
 
     public void Test() throws InterruptedException {
 
+        //Перейти в яндекс маркет
         mainPageSteps.clickMarket();
+
+        //Выбрать раздел Компьютеры
         yandexMarketPageSteps.selectComputers();
+
+        //Выбрать раздел Планшеты
         yandexMarketPageSteps.selectSubMenu("Планшеты");
+
+        //Проверить что на странице отображается заголовок «Планшеты»
         filterPageSteps.checkPageName("Планшеты");
+
+        //Выбрать фильтр по производителям Apple и HUAWEI
         filterPageSteps.selectBrand("Производитель Apple");
         filterPageSteps.selectBrand("Производитель HUAWEI");
+
+        //Задать параметр поиска от 20000 рублей.
         filterPageSteps.setMinPrice("20000");
+
+        //Задать параметр поиска до 25000 рублей.
         filterPageSteps.setMaxPrice("25000");
+
+        //Проверить что цены в таблице в интервале 20000  – 25000 рублей
         filterPageSteps.checkPriceRange(20000,25000);
 
 
